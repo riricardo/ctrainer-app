@@ -50,9 +50,8 @@ android {
         getByName("release") {
             signingConfig = signingConfigs.getByName("release")
 
-            // Disable shrinking
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = true
+            isShrinkResources = true
         }
 
         getByName("debug") {
