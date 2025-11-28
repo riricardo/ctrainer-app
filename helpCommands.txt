@@ -1,3 +1,0 @@
- flutter pub run flutter_launcher_icons:main -> to create icons main icon in assets\icons\ctrainer_master_1024.png
-
- flutter pub run flutter_native_splash:create -> to create splash screen
