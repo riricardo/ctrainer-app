@@ -16,7 +16,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.ctrainer"
+    namespace = "com.cardonatech.ctrainer"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
