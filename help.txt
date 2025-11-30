@@ -2,7 +2,7 @@ flutter pub run flutter_launcher_icons:main -> to create icons main icon in asse
 
 flutter pub run flutter_native_splash:create -> to create splash screen
 
-flutter build appbundle -> generate appbundle
+flutter build appbundle --release -> generate appbundle
 
 For the android key store it must be added:
 
