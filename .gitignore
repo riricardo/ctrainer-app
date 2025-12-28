@@ -46,4 +46,8 @@ app.*.map.json
 
 # Adroid keystore ignore
 android/key.properties
-android/app/key.jks
+android/app/key.jks  
+
+
+# Backend (Node.js)
+Backend/node_modules/
