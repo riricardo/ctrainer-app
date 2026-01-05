@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'navigation/main_navigation.dart';
+import 'theme/app_theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,7 +10,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CTrainer',
-      theme: ThemeData(useMaterial3: true),
+      themeMode: ThemeMode.system,
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
       home: const MainNavigation(),
     );
   }
