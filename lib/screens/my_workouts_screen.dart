@@ -6,6 +6,9 @@ class MyWorkoutsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenScaffold(title: 'My Workouts');
+    return const ScreenScaffold(
+      title: 'My Workouts',
+      body: Center(child: Text('My Workouts')),
+    );
   }
 }

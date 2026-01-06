@@ -6,6 +6,9 @@ class LogsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenScaffold(title: 'Logs');
+    return const ScreenScaffold(
+      title: 'Logs',
+      body: Center(child: Text('Logs')),
+    );
   }
 }
