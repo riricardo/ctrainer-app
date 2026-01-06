@@ -9,8 +9,7 @@ class AppTheme {
   static const darkSurface = Color(0xFF221B08);
 
   static ThemeData light() {
-    const scheme = ColorScheme(
-      brightness: Brightness.light,
+    const scheme = ColorScheme.light(
       primary: goldDark,
       onPrimary: Colors.white,
       secondary: gold,
@@ -19,8 +18,6 @@ class AppTheme {
       onTertiary: Colors.black,
       error: Color(0xFFB3261E),
       onError: Colors.white,
-      background: Color(0xFFF7F7F7),
-      onBackground: Color(0xFF111111),
       surface: Colors.white,
       onSurface: Color(0xFF111111),
     );
@@ -29,8 +26,7 @@ class AppTheme {
   }
 
   static ThemeData dark() {
-    const scheme = ColorScheme(
-      brightness: Brightness.dark,
+    const scheme = ColorScheme.dark(
       primary: gold,
       onPrimary: Colors.black,
       secondary: goldLight,
@@ -39,8 +35,6 @@ class AppTheme {
       onTertiary: Colors.black,
       error: Color(0xFFCF6679),
       onError: Colors.black,
-      background: darkBg,
-      onBackground: Colors.white,
       surface: darkSurface,
       onSurface: Colors.white,
     );
@@ -52,7 +46,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
-      scaffoldBackgroundColor: scheme.background,
+      scaffoldBackgroundColor: scheme.surface,
 
       appBarTheme: AppBarTheme(
         backgroundColor: scheme.surface,
@@ -63,7 +57,7 @@ class AppTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: scheme.surface,
         selectedItemColor: scheme.primary,
-        unselectedItemColor: scheme.onSurface.withOpacity(0.65),
+        unselectedItemColor: scheme.onSurface.withValues(alpha: 0.65),
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
       ),

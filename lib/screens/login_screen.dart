@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium
-                    ?.copyWith(color: scheme.onBackground.withOpacity(0.7)),
+                    ?.copyWith(color: scheme.onSurface.withValues(alpha: 0.7)),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 32),
