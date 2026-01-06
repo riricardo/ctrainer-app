@@ -69,28 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           ?.copyWith(fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 32),
-                    TextField(
-                      controller: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        labelText: 'Email',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    TextField(
-                      controller: _passwordController,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        labelText: 'Password',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
                     const SizedBox(height: 24),
                     FilledButton(
                       onPressed: _signIn,
-                      child: const Text('Sign In'),
+                      child: const Text('Sign In With Google'),
                     ),
                   ],
                 ),
