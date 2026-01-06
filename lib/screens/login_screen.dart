@@ -30,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
     final scheme = Theme.of(context).colorScheme;
     final accentStart = Color.lerp(scheme.primary, scheme.surface, 0.7)!;
     final accentEnd = Color.lerp(scheme.primaryContainer, scheme.surface, 0.6)!;
-    final shadowColor = Color.lerp(scheme.primary, Colors.black, 0.2)!;
 
     return Scaffold(
       body: SafeArea(
