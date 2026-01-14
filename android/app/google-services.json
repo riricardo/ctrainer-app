@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "707620818356",
+    "project_id": "ctrainer-e37bf",
+    "storage_bucket": "ctrainer-e37bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707620818356:android:8173d6355b208ecaad76e1",
+        "android_client_info": {
+          "package_name": "com.cardonatech.ctrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707620818356-7q9jcdhf4lp7a4cnq0r28btudc11t6pa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cardonatech.ctrainer",
+            "certificate_hash": "c940ce6d2478c084833b5b031f05b822b72e7ce1"
+          }
+        },
+        {
+          "client_id": "707620818356-ncl398o171dglptmm2b62pqpi4pic1uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgwgxOK0AmxejC-jWw_Of6prs784cn6MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707620818356-ncl398o171dglptmm2b62pqpi4pic1uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

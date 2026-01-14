@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../navigation/main_navigation.dart';
+
+import '../services/auth_service.dart';
+import '../ui/snackbar_utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,20 +12,49 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final _authService = AuthService();
+  var _isSigningIn = false;
 
   @override
   void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
     super.dispose();
   }
 
-  void _signIn() {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const MainNavigation()),
-    );
+  Future<void> _signIn() async {
+    if (_isSigningIn) {
+      return;
+    }
+
+    setState(() {
+      _isSigningIn = true;
+    });
+
+    try {
+      await _authService.signInWithGoogle();
+    } on FirebaseAuthException catch (error) {
+      if (!mounted) {
+        return;
+      }
+      showErrorSnackBar(context, error.message ?? 'Login failed.');
+    } catch (error) {
+      if (!mounted) {
+        return;
+      }
+      debugPrint('⚠️ [AUTH] login failed');
+      debugPrint('Login error: $error');
+      debugPrint('⚠️ [AUTH] login failed');
+
+      showErrorSnackBar(
+        context,
+        'Login failed. Please try again.' + error.toString(),
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isSigningIn = false;
+        });
+      }
+    }
   }
 
   @override
@@ -71,8 +103,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 24),
                     FilledButton(
-                      onPressed: _signIn,
-                      child: const Text('Sign In With Google'),
+                      onPressed: _isSigningIn ? null : _signIn,
+                      child: _isSigningIn
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Text('Sign In With Google'),
                     ),
                   ],
                 ),

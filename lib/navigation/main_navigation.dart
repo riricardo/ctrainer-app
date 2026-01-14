@@ -15,7 +15,7 @@ class _MainNavigationState extends State<MainNavigation> {
   int _index = 0;
   late final PageController _pageController;
 
-  final _pages = const [
+  final _pages = [
     MyWorkoutsScreen(),
     ExploreScreen(),
     LogsScreen(),
