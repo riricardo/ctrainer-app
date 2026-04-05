@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       showErrorSnackBar(
         context,
-        'Login failed. Please try again.' + error.toString(),
+        'Login failed. Please try again.$error',
       );
     } finally {
       if (mounted) {
